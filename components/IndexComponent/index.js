@@ -19,6 +19,12 @@ export default function IndexComponent() {
 
   useEffect(() => {
     fetchData(id, page, pageSize);
+    const departnumber = localStorage.getItem('departnumber');
+    if (departnumber) {
+      setID(departnumber);
+    } else {
+      setID(3); // เริ่มต้นให้อยู่ในหน้า��ลัก
+    }
   }, [id, page, pageSize]);
 
   return (
@@ -28,7 +34,7 @@ export default function IndexComponent() {
         <meta property="og:title" content="PSM - Documentation" key="title" />
       </Head>
       <Box sx={{ display: 'flex' }}>
-        <Typography variant="h5" color="initial">อว 67.16/(3)</Typography>
+        <Typography variant="h5" color="initial">อว 67.16/({id})</Typography>
       </Box>
       <DataTableIndexComponent
         Data={Data}

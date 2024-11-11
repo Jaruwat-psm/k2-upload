@@ -19,6 +19,7 @@ import Typography from '@mui/material/Typography';
 import ArticleIcon from '@mui/icons-material/Article';
 import UploadDialogIndexComponent from './IndexComponent/upload_dialog';
 import LogoutIcon from '@mui/icons-material/Logout';
+import Link from 'next/link';
 const drawerWidth = 240;
 
 function LayoutComponent(props) {
@@ -49,6 +50,8 @@ function LayoutComponent(props) {
     setOpen(false);
   };
 
+  const MenuBars = [{'Title': 'เอกสาร อว. ( ฝ่าย )', LinkTo: '/'}, {'Title': 'เอกสารสัญญา', LinkTo: '/contract'}]
+
 
 
   const drawer = (
@@ -56,15 +59,17 @@ function LayoutComponent(props) {
       <Toolbar />
       <Divider />
       <List>
-        {['เอกสาร'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        {MenuBars.map((item, index) => (
+          <Link href={item.LinkTo} >
+          <ListItem key={item} disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <ArticleIcon /> : <MailIcon />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={item.Title} />
             </ListItemButton>
           </ListItem>
+          </Link>
         ))}
       </List>
       <Divider />

@@ -10,12 +10,12 @@ export default function DataTableIndexComponent({ Data, page, pageSize, setPage,
   const columns = [
     { field: 'Date', headerName: 'วันที่', width: 150, align: 'center', headerAlign: 'center' },
     { field: 'Number', headerName: 'เลขที่', width: 120, align: 'center', headerAlign: 'center' },
-    { field: 'Title', headerName: 'เรื่อง', width: 300, align: 'start', headerAlign: 'start' },
-    { field: 'Approval', headerName: 'ผู้อนุมัติ', width: 200, align: 'center', headerAlign: 'center' },
+    { field: 'Title', headerName: 'เรื่อง', width: 400, align: 'start', headerAlign: 'start' },
+    { field: 'Approval', headerName: 'ผู้อนุมัติ', width: 160, align: 'center', headerAlign: 'center' },
     { field: 'budget', headerName: 'งบประมาณ', width: 150, align: 'center', headerAlign: 'center' },
-    { field: 'Owner', headerName: 'ผู้ขอ', width: 150, align: 'center', headerAlign: 'center' },
+    { field: 'Owner', headerName: 'ผู้ขอ', width: 160, align: 'center', headerAlign: 'center' },
     { field: 'Status', headerName: 'สถานะ', width: 100, align: 'center', headerAlign: 'center' },
-    { field: 'Remark', headerName: 'รายละเอียด', width: 160, align: 'center', headerAlign: 'center' },
+    { field: 'Remark', headerName: 'รายละเอียด', width: 170, align: 'center', headerAlign: 'center' },
     { field: '', headerName: 'Action', width: 200, align: 'center', headerAlign: 'center' },
   ];
 
@@ -33,7 +33,7 @@ export default function DataTableIndexComponent({ Data, page, pageSize, setPage,
   })) || [];
 
   return (
-    <Paper sx={{ height: 700, width: '100%' }}>
+    <Paper sx={{ height: '100%', width: '100%' }}>
       <DataGrid
         rows={rows}
         columns={columns}
